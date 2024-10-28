@@ -112,7 +112,7 @@ public class FourthTest {
 		LoginBtn.click();
 	}
 
-	@Test(priority = 4, enabled = false)
+	@Test(priority = 4)
 	public void AddtoCart() throws InterruptedException {
 
 		String[] WebSitesForTheItems = { "https://automationteststore.com/index.php?rt=product/category&path=68",
