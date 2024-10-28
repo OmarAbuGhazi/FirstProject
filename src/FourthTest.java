@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 
 public class FourthTest {
 	WebDriver driver = new ChromeDriver();
-
+	//OmarAbuGhazi
 	String TheWeb = "https://automationteststore.com/";
 	String[] FirstNames = { "Ahmad", "Mohammed", "Mustafa", "Issa", "Malek" };
 	String[] LastNames = { "Khaled", "Hatem", "Yamen", "Hussam", "Laith" };
