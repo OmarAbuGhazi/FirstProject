@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 
 public class FourthTest {
 	WebDriver driver = new ChromeDriver();
-	//OmarAbuGhazi
+	// OmarAbuGhazi
 	String TheWeb = "https://automationteststore.com/";
 	String[] FirstNames = { "Ahmad", "Mohammed", "Mustafa", "Issa", "Malek" };
 	String[] LastNames = { "Khaled", "Hatem", "Yamen", "Hussam", "Laith" };
@@ -133,23 +133,23 @@ public class FourthTest {
 		Thread.sleep(2000);
 		// find the element then get the random item previously chosen then click.
 		ListOfItems.findElements(By.tagName("li")).get(RandomItem).click();
-		//
 		WebElement Container = driver.findElement(By.cssSelector(".thumbnails.grid.row.list-inline"));
 		int TotalItemsInContainer = Container.findElements(By.cssSelector(".col-md-3.col-sm-6.col-xs-12")).size();
 		int RandomItemsInItems = rand.nextInt(TotalItemsInContainer);
 		Container.findElements(By.cssSelector(".col-md-3.col-sm-6.col-xs-12")).get(RandomItemsInItems).click();
 		Thread.sleep(2000);
-		
+
 		WebElement Ulitem = driver.findElement(By.className("productpagecart"));
 		int LIiem = Ulitem.findElements(By.tagName("li")).get(0).findElements(By.tagName("a")).size();
-		
+
 		if (LIiem > 0) {
 			Thread.sleep(1000);
 			driver.findElement(By.className("cart")).click();
 			Thread.sleep(1000);
 			String ActualResult = driver.findElement(By.className("heading1")).getText();
 			String ExpectedResult = "Shopping Cart";
-			Assert.assertEquals(ActualResult, ExpectedResult.toUpperCase(),"the expected result to find 'shopping cart' in the checkout page");
+			Assert.assertEquals(ActualResult, ExpectedResult.toUpperCase(),
+					"the expected result to find 'shopping cart' in the checkout page");
 			boolean ExpectedOutcome = true;
 			boolean ActualOutCome = driver.findElement(By.id("cart_checkout1")).isDisplayed();
 			assertEquals(ActualOutCome, ExpectedOutcome, "Expected result to find checkout Btn");
@@ -158,7 +158,8 @@ public class FourthTest {
 			System.out.println("Out Of Stocks");
 			String ExpectedResult = "https://automationteststore.com/";
 			String ActualResult = driver.getCurrentUrl();
-			Assert.assertEquals(ActualResult, ExpectedResult, "The expected result when the item is out of stock, return to the home page of the website");
+			Assert.assertEquals(ActualResult, ExpectedResult,
+					"The expected result when the item is out of stock, return to the home page of the website");
 		}
 	}
 }
